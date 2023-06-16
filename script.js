@@ -1,3 +1,4 @@
+//Elementos HMTL
 let scorePntt;
 let scoreText = 0;
 let gameoverAud = document.getElementById("gameover");
@@ -14,6 +15,7 @@ let gameScreen = document.getElementById("gameScreen");
 const charMain = document.getElementById("charMain");
 const jumpButton = document.getElementById("jump");
 const shootButton1 = document.getElementById("shootButton");
+//funções
 jumpButton.addEventListener("touchstart", function () {
   const jumpAud = document.getElementById("jumpAud");
   jumpAud.play();
@@ -50,7 +52,6 @@ function pontuation() {
     } else if (num == 2) {
       enemy.src = "images/shootButton.png";
     }
-
     const randomNum = Math.floor(Math.random() * 4);
     if (randomNum == 0) {
       enemy.style.animation = "enemyMove 1s infinite linear";
