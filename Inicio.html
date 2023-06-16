@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body,html{
+        height: 100%;
+        overflow: hidden;
+        background-color: #000;
+      }
+      .playParent{
+        top: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 5px solid #000;
+        filter: blur(6px);
+        
+      }
+    
+      #background{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+      #title{
+        position: absolute;
+        height: 70%;
+        left: 71%;
+        top: 15%;
+        z-index: 10;
+      }
+      #title1{
+        position: absolute;
+        height: 70%;
+        left: 70.7%;
+        top: 15.3%;
+        z-index: 9;
+      }
+      #buttonPlay{
+        position: absolute;
+        z-index: 9;
+        height: 30%;
+        left: 25%;
+        top: 35%;
+      }
+    </style>
+  </head>
+  <body>
+  	<audio src="musics/click.mp3" id="audio" type="audio/mpeg"></audio>
+    <img src="images/buttonP.jpg" id="buttonPlay">
+    <img src="images/titulo1.png" id="title1">
+    <img src="images/titulo.png" id="title">
+    <div class="playParent">
+      <img src="images/initialBack.jpg" id="background">
+    
+    </div>
+    <script>
+      const audio = document.getElementById("audio")
+      const play = document.querySelector("#buttonPlay")
+      play.addEventListener("touchstart", ()=>{
+      	audio.play()
+        window.location.replace("index.html")
+        
+      }) 
+      
+    </script>
+  </body>
+</html>

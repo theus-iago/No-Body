@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>The Journey of Dumbs</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        background-color: #000;
+        height: 100%;
+        overflow: hidden;
+      }
+      .gameScreen {
+        filter: blur(0px);
+        width: 100%;
+        height: 100%;
+        border: 5px solid #000;
+        margin: 0 auto;
+        margin-top: 0;
+        position: relative;
+        overflow: hidden;
+        background-color: lightblue;
+      }
+
+      #charMain {
+        position: absolute;
+        left: -80px;
+        background-color: none;
+        top: 25px;
+        width: 30%;
+        height: 10%;
+      }
+      .jumpChar {
+        animation: jumpChar 500ms ease-out;
+      }
+      @keyframes jumpChar {
+        0% {
+          left: 10%;
+        }
+        50% {
+          left: 40%;
+        }
+        60% {
+          left: 40%;
+        }
+        100% {
+          left: 10%;
+        }
+      }
+      #button {
+        position: absolute;
+        right: 0;
+        transform: rotate(90deg);
+        top: 0;
+      }
+      #button2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: rotate(90deg);
+      }
+      .jumpButton {
+        transform: rotate(90deg);
+        bottom: 30px;
+        left: 40%;
+        position: absolute;
+      }
+      .enemy {
+        bottom: 100%;
+        left: 10%;
+        position: absolute;
+        width: 10%;
+        height: 5%;
+      }
+      @keyframes enemyMove {
+        from {
+          bottom: -10%;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+      @keyframes enemyMove2 {
+        from {
+          bottom: -100%;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+      @keyframes enemyMove3 {
+        from {
+          bottom: -50%;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+      @keyframes enemyMove4 {
+        from {
+          bottom: 150%;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+
+      .bossSprite {
+        height: 17%;
+        transform: rotate(90deg);
+        left: 17.5%;
+        position: absolute;
+        bottom: 10%;
+      }
+      .shootButton {
+        position: absolute;
+        left: 40%;
+        top: 25px;
+      }
+      .bullet {
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #000;
+        position: absolute;
+        top: 95px;
+        left: 25%;
+        animation: bulletM 0.6s linear;
+      }
+      .bossLife {
+        position: absolute;
+        border: 2px solid #000;
+        bottom: 1px;
+        right: 1px;
+        width: 15px;
+        height: 250px;
+        background-color: red;
+      }
+      @keyframes bulletM {
+        from {
+          top: 95px;
+        }
+        to {
+          top: 570px;
+        }
+      }
+      .tree {
+        left: 10%;
+        position: absolute;
+        height: 200px;
+        animation: tree 2s linear infinite;
+      }
+      @keyframes tree {
+        from {
+          bottom: -180px;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+      #cloud {
+        position: absolute;
+        height: 15%;
+        left: 70%;
+        animation: cloud 25s infinite linear;
+      }
+      @keyframes cloud {
+        from {
+          bottom: -15%;
+        }
+        to {
+          bottom: 100%;
+        }
+      }
+      #arbusto {
+        left: 10%;
+        position: absolute;
+        height: 10%;
+        animation: arbusto 1.5s linear infinite;
+      }
+      @keyframes arbusto {
+        from {
+          bottom: -10%;
+        }
+        to {
+          bottom: 110%;
+        }
+      }
+      #floor {
+        width: 10%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      #gameO {
+        transform: rotate(90deg);
+        border-radius: 5px;
+        left: -20%;
+        top: -20%;
+        z-index: 2;
+        height: 0;
+        width: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font: normal 10pt arial;
+        padding: 15px;
+      }
+      p {
+        font: normal 8pt arial;
+        padding: 10px;
+      }
+      #score {
+        border: solid 2px #000;
+        transform: rotate(90deg);
+        position: absolute;
+        z-index: 10;
+        left: 85%;
+        top: 45%;
+        text-align: center;
+      }
+      #heightS {
+        height: 10%;
+        position: absolute;
+      }
+      #widthS {
+        width: 5%;
+        position: absolute;
+      }
+      #scoreF {
+        position: absolute;
+      }
+      #back {
+        transform: rotate(180deg);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body onload="pontuation()" id="body">
+    <div id="heightS"></div>
+    <div id="widthS"></div>
+    <audio
+      src="musics/backgroundMusicD.mp3"
+      type="audio/mpeg"
+      id="audio"
+      class="audio1"
+      loop
+    ></audio>
+    <audio 
+      src="musics/gameover.mp3" 
+      type="audio/mpeg"
+      loop
+      id="gameover"
+    ></audio>
+    <audio src="musics/jump.mp3" type="audio/mpeg" id="jumpAud"></audio>
+    <div id="gameO">
+      <div id="scoreF"></div>
+      <h1 id="textG"></h1>
+      <p id="subG"></p>
+    </div>
+    <div class="gameScreen" id="gameScreen">
+      <img src="images/nada.jpg" id="back" />
+      <img src="images/nuvemDef.png" id="cloud" />
+      <img src="images/tree.png" class="tree" />
+      <img src="images/arbusto.gif" id="arbusto" />
+      <img src="images/characterSprite.gif" alt="" id="charMain" class="" />
+      <img
+        src="images/jumpButton.png"
+        class="jumpButton"
+        id="jump"
+        touchstart="jump()"
+      />
+      <div id="bulletParent"></div>
+      <img src="images/enemy.gif" class="enemy" id="enemy" />
+      <img src="images/bossSpriteD.gif" class="bossSprite" />
+
+      <img src="images/shootButton.png" class="shootButton" id="shootButton" />
+      <div id="bossLife" class="bossLife"></div>
+      <img src="images/chao128.gif" id="floor" />
+      <div id="score">0</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
