@@ -24,7 +24,7 @@
         margin-top: 0;
         position: relative;
         overflow: hidden;
-        background-color: lightblue;
+        background-color:lightblue;
       }
 
       #charMain {
@@ -69,6 +69,7 @@
         bottom: 30px;
         left: 40%;
         position: absolute;
+        width:150px;
       }
       .enemy {
         bottom: 100%;
@@ -118,6 +119,7 @@
         bottom: 10%;
       }
       .shootButton {
+        width:150px;
         position: absolute;
         left: 40%;
         top: 25px;
@@ -199,7 +201,7 @@
         top: 0;
       }
       #gameO {
-        transform: rotate(90deg);
+        transform:rotate(90deg);
         border-radius: 5px;
         left: -20%;
         top: -20%;
@@ -210,22 +212,35 @@
         background-color: rgba(0, 0, 0, 0.4);
         box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
         text-align: center;
-        font: normal 10pt arial;
+        font: normal 20pt arial;
         padding: 15px;
       }
       p {
-        font: normal 8pt arial;
+        font: normal 15pt Arial, Helvetica, sans-serif;
         padding: 10px;
       }
-      #score {
-        border: solid 2px #000;
+      h3 {
+        color:white;
         transform: rotate(90deg);
-        position: absolute;
+        position:absolute;
         z-index: 10;
         left: 85%;
         top: 45%;
-        text-align: center;
-        font-size:35px;
+        text-align:center;
+        text-shadow:1px 2px 2px black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:32pt;
+      }
+      #score {
+        color:white;
+        position:absolute;
+        z-index: 10;
+        left: 85%;
+        top: 45%;
+        text-align:center;
+        text-shadow:1px 2px 2px black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:32pt;
       }
       #heightS {
         height: 15%;
@@ -236,6 +251,7 @@
         position: absolute;
       }
       #scoreF {
+        font-size:27pt;
         position: absolute;
       }
       #back {
@@ -287,7 +303,7 @@
       <img src="images/shootButton.png" class="shootButton" id="shootButton" />
       <div id="bossLife" class="bossLife"></div>
       <img src="images/chao128.gif" id="floor" />
-      <div id="score">0</div>
+      <h3>score:  <div id="score">0</div></h3>
     </div>
 
     <script src="script.js"></script>
