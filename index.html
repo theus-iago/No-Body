@@ -219,6 +219,18 @@
         font: normal 15pt Arial, Helvetica, sans-serif;
         padding: 10px;
       }
+      h3 {
+        color:white;
+        transform: rotate(90deg);
+        position:absolute;
+        z-index: 10;
+        left: 85%;
+        top: 45%;
+        text-align:center;
+        text-shadow:1px 2px 2px black;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:32pt;
+      }
       #score {
         color:white;
         transform: rotate(90deg);
@@ -229,7 +241,7 @@
         text-align:center;
         text-shadow:1px 2px 2px black;
         font-family:Arial, Helvetica, sans-serif;
-        font-size:30pt;
+        font-size:32pt;
       }
       #heightS {
         height: 10%;
@@ -292,7 +304,7 @@
       <img src="images/shootButton.png" class="shootButton" id="shootButton" />
       <div id="bossLife" class="bossLife"></div>
       <img src="images/chao128.gif" id="floor" />
-      <div id="score">0</div>
+      <h3>Score: <div id="score">0</div></h3>
     </div>
 
     <script src="script.js"></script>
