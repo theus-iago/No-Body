@@ -1,4 +1,9 @@
 # No-Body
 Jogo desenvolvido pela Seven Dumbs
 
-https://seven-dumbs.github.io/Projeto-No-Body
+
+versão pessoal:
+https://theus-iago.github.io/Projeto-Bo-Body
+
+versão da equipe:
+https://seven-dumbs.github.io/No-Body
