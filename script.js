@@ -16,7 +16,7 @@ const charMain = document.getElementById("charMain");
 const jumpButton = document.getElementById("jump");
 const shootButton1 = document.getElementById("shootButton");
 //funções
-jumpButton.addEventListener("touchstart", function () {
+jumpButton.addEventListener("onclick", function () {
   const jumpAud = document.getElementById("jumpAud");
   jumpAud.play();
   charMain.classList.add("jumpChar");
@@ -111,14 +111,14 @@ charMain.style.left = `${floorAlt}px`;
       gameO.style.top = `42%`;
       textG.innerText = "GAME OVER";
       subG.innerText = "CLIQUE EM QUALQUER LUGAR PARA RECOMEÇAR";
-      body.addEventListener("touchstart", () => {
+      body.addEventListener("onmouseenter", () => {
         document.location.reload();
       });
     }
   }, 1);
 
 const shootButton = document.getElementById("shootButton");
-shootButton.addEventListener("touchstart", function () {
+shootButton.addEventListener("onclick", function () {
   const bullet = document.createElement("div");
   const attr1 = document.createAttribute("class");
   const attr2 = document.createAttribute("src");
