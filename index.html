@@ -195,6 +195,7 @@
         }
       }
       #floor {
+        background-color:#784b2e;
         width: 10%;
         height: 100%;
         position: absolute;
@@ -266,7 +267,7 @@
   <body onload="pontuation()" id="body">
     <div id="heightS"></div>
     <div id="widthS"></div>
-    <audio
+    <!--<audio
       src="musics/backgroundMusicD.mp3"
       type="audio/mpeg"
       id="audio"
@@ -279,14 +280,14 @@
       loop
       id="gameover"
     ></audio>
-    <audio src="musics/jump.mp3" type="audio/mpeg" id="jumpAud"></audio>
+    <audio src="musics/jump.mp3" type="audio/mpeg" id="jumpAud"></audio>-->
     <div id="gameO">
       <div id="scoreF"></div>
       <h1 id="textG"></h1>
       <p id="subG"></p>
     </div>
     <div class="gameScreen" id="gameScreen">
-      <img src="images/nada.jpg" id="back" />
+     <!-- <img src="images/nada.jpg" id="back" />-->
       <img src="images/nuvemDef.png" id="cloud" />
       <img src="images/tree.png" class="tree" />
       <img src="images/arbusto.gif" id="arbusto" />
@@ -303,7 +304,7 @@
 
       <img src="images/shootButton.png" class="shootButton" id="shootButton" />
       <div id="bossLife" class="bossLife"></div>
-      <img src="images/chao128.gif" id="floor" />
+      <div  id="floor"></div>
       <h3>score: <div id="score">0</div></h3>
     </div>
 
